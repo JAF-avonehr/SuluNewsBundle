@@ -62,7 +62,7 @@ class NewsWebsiteController extends AbstractController
     /**
      * Returns rendered part of template specified by block.
      */
-    protected function renderBlock(string $template, string $block, array $attributes = [])
+    protected function renderBlockView(string $template, string $block, array $attributes = [])
     {
         $twig = $this->container->get('twig');
         $attributes = $twig->mergeGlobals($attributes);
@@ -73,7 +73,7 @@ class NewsWebsiteController extends AbstractController
         \ob_start();
 
         try {
-            $rendered = $template->renderBlock($block, $attributes);
+            $rendered = $template->renderBlockView($block, $attributes);
             \ob_end_clean();
 
             return $rendered;
