@@ -47,7 +47,10 @@ class NewsWebsiteController extends AbstractController
                 ['news' => $news]
             );
         }
-
+        
+        if (gettype($content) == 'object') {
+            $content = $content->getContent();
+        }
         return new Response($content);
     }
 
