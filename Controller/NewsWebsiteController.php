@@ -56,7 +56,7 @@ class NewsWebsiteController extends AbstractController
         $parameters['previewParentTemplate'] = $view;
         $parameters['previewContentReplacer'] = Preview::CONTENT_REPLACER;
 
-        return $this->renderBlockView('@SuluWebsite/Preview/preview.html.twig', $parameters);
+        return $this->renderView('@SuluWebsite/Preview/preview.html.twig', $parameters);
     }
 
     /**
