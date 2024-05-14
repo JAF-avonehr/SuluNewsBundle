@@ -42,7 +42,7 @@ class NewsWebsiteController extends AbstractController
                 ['news' => $news]
             );
         } else {
-            $content = $this->renderBlockView(
+            $content = $this->renderView(
                 'news/index.html.twig',
                 ['news' => $news]
             );
