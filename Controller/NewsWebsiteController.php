@@ -42,7 +42,7 @@ class NewsWebsiteController extends AbstractController
                 ['news' => $news]
             );
         } else {
-            $content = $this->renderView(
+            $content = $this->renderBlockView(
                 'news/index.html.twig',
                 ['news' => $news]
             );
@@ -56,7 +56,7 @@ class NewsWebsiteController extends AbstractController
         $parameters['previewParentTemplate'] = $view;
         $parameters['previewContentReplacer'] = Preview::CONTENT_REPLACER;
 
-        return $this->renderView('@SuluWebsite/Preview/preview.html.twig', $parameters);
+        return $this->renderBlockView('@SuluWebsite/Preview/preview.html.twig', $parameters);
     }
 
     /**
