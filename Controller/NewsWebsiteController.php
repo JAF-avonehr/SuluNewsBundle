@@ -31,7 +31,7 @@ class NewsWebsiteController extends AbstractController
         }
 
         if ($partial) {
-            $content = $this->renderBlock(
+            $content = $this->renderBlockView(
                 'news/index.html.twig',
                 'content',
                 ['news' => $news]
@@ -42,7 +42,7 @@ class NewsWebsiteController extends AbstractController
                 ['news' => $news]
             );
         } else {
-            $content = $this->renderBlockView(
+            $content = $this->renderView(
                 'news/index.html.twig',
                 ['news' => $news]
             );
